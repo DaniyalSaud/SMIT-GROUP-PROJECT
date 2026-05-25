@@ -5,3 +5,15 @@
 [ 2026-05-17 15:31:02,693 ] config_utils.py:28 root - INFO - Loaded Params:
 [ 2026-05-17 15:31:04,178 ] config_utils.py:14 root - INFO - Warning: config.yaml not found.
 [ 2026-05-17 15:31:04,200 ] config_utils.py:28 root - INFO - Loaded Params:
+[ 2026-05-25 03:12:08,228 ] best_model.py:58 root - INFO - Starting best model selection process...
+[ 2026-05-25 03:12:08,229 ] best_model.py:20 root - INFO - MLflow tracking -> sqlite:///mlflow.db
+[ 2026-05-25 03:12:09,614 ] best_model.py:70 root - INFO - ===================================
+[ 2026-05-25 03:12:09,615 ] best_model.py:71 root - INFO - BEST RUN ID : 761f82cb02364807b020a11680bac4fc
+[ 2026-05-25 03:12:09,616 ] best_model.py:72 root - INFO - ===================================
+[ 2026-05-25 03:12:09,807 ] best_model.py:79 root - INFO - Prediction model registered - version 1
+[ 2026-05-25 03:12:09,866 ] best_model.py:92 root - WARNING - No transformation_pipeline artifact found; skipping pipeline registration.
+[ 2026-05-25 03:12:09,962 ] best_model.py:108 root - INFO - FloodPrediction_Training v1 -> Production
+[ 2026-05-25 03:12:09,964 ] best_model.py:110 root - INFO - ===================================
+[ 2026-05-25 03:12:09,966 ] best_model.py:111 root - INFO - Best model selection completed!
+[ 2026-05-25 03:12:09,966 ] best_model.py:112 root - INFO - ===================================
+[ 2026-05-25 03:12:09,968 ] best_model.py:121 root - INFO - Log file saved: logs/best_model.log

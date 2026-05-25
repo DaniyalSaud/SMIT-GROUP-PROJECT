@@ -33,7 +33,7 @@ def train():
         RANDOM_STATE = params["split"]["random_state"]
         TRAIN_CSV    = params["output"]["train_path"]       # data/processed/train
         TEST_CSV     = params["output"]["test_path"]        # data/processed/test
-        CV_FOLDS     = params["model"]["cv"]
+        CV_FOLDS     = params["models"]["cv"]
         SCORES_PATH  = params["artifacts"]["scores_file"]  # artifacts/scores.json
 
         EXPERIMENT_NAME = "FloodPrediction_Training"
@@ -49,13 +49,14 @@ def train():
             .getOrCreate()
         )
         spark.sparkContext.setLogLevel("WARN")
-
+        print("Logging level set to WARN to reduce verbosity.")
+        
         # ── 2. Load preprocessed CSVs ─────────────────────────────────────────
         # preprocessing.py saves with coalesce(1) so Spark wrote a folder;
         # reading the folder directly picks up the single part file inside.
         train_df = spark.read.csv(TRAIN_CSV, header=True, inferSchema=True)
         test_df  = spark.read.csv(TEST_CSV,  header=True, inferSchema=True)
-
+        print("Preprocessed CSVs loaded into Spark DataFrames.")
         print("===================================")
         print("Loaded Preprocessed Dataset")
         print(f"  Train rows : {train_df.count()}")

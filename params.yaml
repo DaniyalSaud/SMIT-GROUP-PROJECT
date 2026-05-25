@@ -56,8 +56,8 @@ preprocessing:
 # Output Paths  (used by preprocess.py)
 # ----------------------------------------------------------
 output:
-  train_path:    "data/processed/train.csv"
-  test_path:     "data/processed/test.csv"
+  train_path:    "data/processed/train"
+  test_path:     "data/processed/test"
   pipeline_path: "models/pipeline"
 
 # ----------------------------------------------------------
@@ -135,6 +135,7 @@ models:
       random_state: 42
       verbosity: 0
 
+  cv: 3
 # ----------------------------------------------------------
 # Evaluation Metrics
 # ----------------------------------------------------------
@@ -166,3 +167,6 @@ sample_input:
   Watersheds: 1
   DeterioratingInfrastructure: 1
   WetlandLoss: 4
+
+artifacts:
+  scores_file: "scores.json"
